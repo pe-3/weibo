@@ -4,8 +4,8 @@
       <avatar :url="weibo.avatar" />
     </div>
     <div class="right">
-      <p class="author-nickname">{{ weibo.nickName }}</p>
-      <p class="autor-info">{{ weibo.publish_time }} 来自 {{ weibo.device }}</p>
+      <p class="author-nickname">{{ weibo.nickname }}</p>
+      <p class="autor-info">{{ publish_time }} 来自 {{ weibo.device }}</p>
       <p class="weibo-text">
         {{ weibo.article }}
       </p>
@@ -34,6 +34,8 @@ import imgList from "./img-list.vue";
 import svgShare from "../../../assets/svgs/share.svg";
 import svgComment from "../../../assets/svgs/comment.svg";
 import svgLike from "../../../assets/svgs/like.svg";
+import moment from 'moment'
+
 export default {
   name: "weibo-card",
   components: {
@@ -70,6 +72,9 @@ export default {
       if (typeof this.weibo.imgs !== "string") return [];
       return this.weibo.imgs.split(";");
     },
+    publish_time() {
+      return moment(this.weibo.publish_time).fromNow();
+    }
   },
   methods: {
     clickLike() {
@@ -111,6 +116,8 @@ export default {
 }
 .weibo-text {
   margin-top: 10px;
+  white-space:pre-line;
+  margin-bottom: 10px;
 }
 
 .weibo-imgs {

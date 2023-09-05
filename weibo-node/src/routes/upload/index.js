@@ -1,9 +1,9 @@
 const multer = require('multer');
 const { getHashByBuffer } = require('../../utils/hash')
 const path = require('path');
-const upload = multer();
 const fs = require('fs')
 
+const upload = multer();
 module.exports = {
   auth: true,
   midwares: [upload.single('file')],

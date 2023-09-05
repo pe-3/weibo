@@ -14,7 +14,6 @@ module.exports = {
           msg: '密码强度过低，请重新设置密码'
         })
       }
-
       const newUser = {
         username,
         password: hashPassword(password),
