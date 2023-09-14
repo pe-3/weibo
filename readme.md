@@ -17,6 +17,7 @@ npm start
 ## 后台配置数据库
 
 ```js
+// mysql/pool.js
 const pool = require('mysql').createPool({
   host: 'localhost',
   user: 'root', // 数据库用户名
