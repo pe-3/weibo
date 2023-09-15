@@ -46,6 +46,9 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
+  if (to.name === 'signup') {
+    return next();
+  }
   // 判断登陆
   if (
     // 检查用户是否已登录

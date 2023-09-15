@@ -14,6 +14,8 @@ const routes = getModules(
   join(__dirname, './routes')
 );
 
+console.log(routes)
+
 routes.forEach(({ path, module }) => {
   const router = express.Router();
 

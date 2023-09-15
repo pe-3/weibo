@@ -19,7 +19,7 @@ exports.getModules = function(dirPath) {
         return modules;
     }
     return Loop(dirPath).map(m => ({
-        path: m.path.replace(dirPath, '').replace('.js', '').replace('index', ''),
+        path: m.path.replace(dirPath, '').replace('.js', '').replace('index', '').replaceAll('\\', '/'),
         module: m.module
     }));
 }

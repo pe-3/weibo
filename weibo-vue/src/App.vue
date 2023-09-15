@@ -1,10 +1,12 @@
 <script>
 import Message from './template/components/universal/message.vue'
+import TinyVue from '@opentiny/vue-button'
 
 export default {
   name: "App",
   components: {
-    Message
+    Message,
+    TinyVue
   },
   props: {},
   setup() {
@@ -17,6 +19,7 @@ export default {
   <div id="root">
     <Message />
     <router-view></router-view>
+    <tiny-vue tiny_mode="pc">按钮</tiny-vue>
   </div>
 </template>
 
